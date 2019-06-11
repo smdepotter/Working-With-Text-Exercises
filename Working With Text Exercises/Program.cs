@@ -163,25 +163,15 @@ namespace Working_With_Text_Exercises
 
             foreach (var character in characters)
             {
-                switch (character)
-                {
-                    //additional func, give user a count of each vowel
-                    case 'a':
-                        ++letterA;
-                        break;
-                    case 'e':
-                        ++letterE;
-                        break;
-                    case 'i':
-                        ++letterI;
-                        break;
-                    case 'o':
-                        ++letterO;
-                        break;
-                    case 'u':
-                        ++letterU;
-                        break;
-                }
+                if (character == 'a')
+                    ++letterA;
+                else if (character == 'e')
+                    ++letterE;
+                else if (character == 'i')
+                    ++letterI;
+                else if (character == 'o')
+                    ++letterO;
+                else if (character == 'u') ++letterU;
             }
 
             var total = letterA + letterE + letterI + letterO + letterU;

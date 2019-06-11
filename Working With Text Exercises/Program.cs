@@ -27,12 +27,10 @@ namespace Working_With_Text_Exercises
 
             for (var i = 1; i < numbers.Count; i++)
             {
-                if (numbers[i] != numbers[i - 1] + 1)
-                {
-                    Console.WriteLine("Non Consecutive, Program Stop");
-                    isConsecutive = false;
-                    break;
-                }
+                if (numbers[i] == numbers[i - 1] + 1) continue;
+                Console.WriteLine("Non Consecutive, Program Stop");
+                isConsecutive = false;
+                break;
             }
 
             if (isConsecutive) Console.WriteLine("Consecutive");

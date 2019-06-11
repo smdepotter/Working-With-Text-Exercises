@@ -10,11 +10,11 @@ namespace Working_With_Text_Exercises
     {
         static void Main(string[] args)
         {
-            Exercise4();
+            Exercise5();
         }
 
         static void Exercise1()
-        /* Write a program and ask the user to enter a few numbers separated by a hyphen.
+        /* Write a program an ask the user to enter a few numbers separated by a hyphen.
          Work out if the numbers are consecutive. For example, if the input is "5-6-7-8-9"
          or "20-19-18-17-16", display a message: "Consecutive"; otherwise, display 
          "Not Consecutive".
@@ -139,6 +139,60 @@ namespace Working_With_Text_Exercises
 
             Console.WriteLine(pascalCaseConversion);
 
+        }
+
+        static void Exercise5()
+        {
+            /*
+             * Write a program and ask the user to enter an English word.
+             * Count the number of vowels (a, e, o, u, i) in the word.
+             * So, if the user enters "inadequate", the program should display 6 on the console.
+             */
+
+            Console.WriteLine("Enter an English Word");
+
+            var userInput = Console.ReadLine();
+            var characters = new List<char>();
+            characters.AddRange(userInput.ToCharArray());
+
+            var letterA = 0;
+            var letterE = 0;
+            var letterI = 0;
+            var letterO = 0;
+            var letterU = 0;
+
+            foreach (var character in characters)
+            {
+                switch (character)
+                {
+                    //additional func, give user a count of each vowel
+                    case 'a':
+                        ++letterA;
+                        break;
+                    case 'e':
+                        ++letterE;
+                        break;
+                    case 'i':
+                        ++letterI;
+                        break;
+                    case 'o':
+                        ++letterO;
+                        break;
+                    case 'u':
+                        ++letterU;
+                        break;
+                }
+            }
+
+            var total = letterA + letterE + letterI + letterO + letterU;
+
+            Console.WriteLine(@"You had a total of {0} Vowels
+                                A: {1}
+                                E: {2}
+                                I: {3}
+                                O: {4}
+                                U: {5}",
+                total, letterA, letterE, letterI, letterO, letterU);
         }
     }
 }

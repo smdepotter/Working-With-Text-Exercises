@@ -10,7 +10,7 @@ namespace Working_With_Text_Exercises
     {
         static void Main(string[] args)
         {
-            Exercise3();
+            Exercise4();
         }
 
         static void Exercise1()
@@ -106,6 +106,38 @@ namespace Working_With_Text_Exercises
             {
                 Console.WriteLine("Invalid Time");
             }
+
+        }
+
+        static void Exercise4()
+        {
+            /*
+             * Write a program and ask the user to enter a few words separated by a space.
+             * Use the words to create a variable name with PascalCase. For example,
+             * if the user types: "number of students", display "NumberOfStudents".
+             * Make sure that the program is not dependent on the input.
+             * So, if the user types "NUMBER OF STUDENTS",
+             * the program should still display "NumberOfStudents". 
+             */
+
+            Console.WriteLine("Enter a few words. Separate by Space");
+
+            var userInput = Console.ReadLine();
+            var words = new List<string>();
+            var pascalCaseConversion = new StringBuilder();
+
+            words.AddRange(userInput.Split(" "));
+
+
+            foreach (var word in words)
+            {
+                var lower = word.Substring(1).ToLower();
+                var upper = word.First().ToString().ToUpper();
+                pascalCaseConversion.Append(upper + lower);
+
+            }
+
+            Console.WriteLine(pascalCaseConversion);
 
         }
     }

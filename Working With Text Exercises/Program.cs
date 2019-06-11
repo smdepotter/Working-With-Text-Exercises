@@ -97,8 +97,7 @@ namespace Working_With_Text_Exercises
 
             Console.WriteLine("Enter a time");
 
-            TimeSpan span;
-            if (TimeSpan.TryParse(Console.ReadLine(), out span)) Console.WriteLine("Ok");
+            if (TimeSpan.TryParse(Console.ReadLine(), out _)) Console.WriteLine("Ok");
             else
             {
                 Console.WriteLine("Invalid Time");

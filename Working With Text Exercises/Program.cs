@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Text;
 
 namespace Working_With_Text_Exercises
@@ -26,7 +25,7 @@ namespace Working_With_Text_Exercises
             var numbers = userInput.Split("-").Select(n => Convert.ToInt32(n)).ToList();
             var isConsecutive = true;
 
-            for (int i = 1; i < numbers.Count; i++)
+            for (var i = 1; i < numbers.Count; i++)
             {
                 if (numbers[i] != numbers[i - 1] + 1)
                 {
